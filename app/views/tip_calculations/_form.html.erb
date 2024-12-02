@@ -1,32 +1,33 @@
-<%= form_with(model: tip_calculation) do |form| %>
-  <% if tip_calculation.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tip_calculation.errors.count, "error") %> prohibited this tip_calculation from being saved:</h2>
+<div class="container mt-4">
+  <%= form_with(model: tip_calculation) do |form| %>
+    <% if tip_calculation.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(tip_calculation.errors.count, "error") %> prohibited this tip calculation from being saved:</h4>
+        <ul>
+          <% tip_calculation.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% tip_calculation.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="mb-3">
+      <%= form.label :bill_amount, class: "form-label" %>
+      <%= form.number_field :bill_amount, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :tip_percentage, class: "form-label" %>
+      <%= form.number_field :tip_percentage, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :num_people, class: "form-label" %>
+      <%= form.number_field :num_people, class: "form-control" %>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <%= form.submit "Calculate Tip", class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :bill_amount, style: "display: block" %>
-    <%= form.text_field :bill_amount %>
-  </div>
-
-  <div>
-    <%= form.label :tip_percentage, style: "display: block" %>
-    <%= form.text_field :tip_percentage %>
-  </div>
-
-  <div>
-    <%= form.label :num_people, style: "display: block" %>
-    <%= form.number_field :num_people %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

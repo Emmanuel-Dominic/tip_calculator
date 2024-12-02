@@ -1,12 +1,12 @@
-<% content_for :title, "Editing tip calculation" %>
+<% content_for :title, "Editing Tip Calculation" %>
 
-<h1>Editing tip calculation</h1>
+<div class="container mt-4">
+  <h1 class="mb-4">Editing Tip Calculation</h1>
 
-<%= render "form", tip_calculation: @tip_calculation %>
+  <%= render "form", tip_calculation: @tip_calculation %>
 
-<br>
-
-<div>
-  <%= link_to "Show this tip calculation", @tip_calculation %> |
-  <%= link_to "Back to tip calculations", tip_calculations_path %>
+  <div class="mt-4">
+    <%= link_to "View Tip Calculation", @tip_calculation, class: "btn btn-secondary" %>
+    <%= link_to "Back to Tip Calculations", tip_calculations_path, class: "btn btn-primary" %>
+  </div>
 </div>

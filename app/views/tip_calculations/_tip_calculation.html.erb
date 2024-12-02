@@ -1,37 +1,28 @@
-<div id="<%= dom_id tip_calculation %>">
-  <p>
-    <strong>Bill amount:</strong>
-    <%= tip_calculation.bill_amount %>
-  </p>
-
-  <p>
-    <strong>Tip percentage:</strong>
-    <%= tip_calculation.tip_percentage %>
-  </p>
-
-  <p>
-    <strong>Tip amount:</strong>
-    <%= tip_calculation.tip_amount %>
-  </p>
-
-  <p>
-    <strong>Total bill:</strong>
-    <%= tip_calculation.total_bill %>
-  </p>
-
-  <p>
-    <strong>Num people:</strong>
-    <%= tip_calculation.num_people %>
-  </p>
-
-  <p>
-    <strong>Per person amount:</strong>
-    <%= tip_calculation.per_person_amount %>
-  </p>
-
-  <p>
-    <strong>Timestamp:</strong>
-    <%= tip_calculation.timestamp %>
-  </p>
-
+<div class="card" id="<%= dom_id tip_calculation %>">
+  <div class="card-body">
+    <h5 class="card-title">Tip Calculation Details</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Bill Amount:</strong> <%= tip_calculation.bill_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Tip Percentage:</strong> <%= tip_calculation.tip_percentage %>%
+      </li>
+      <li class="list-group-item">
+        <strong>Tip Amount:</strong> <%= tip_calculation.tip_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Total Bill:</strong> <%= tip_calculation.total_bill %>
+      </li>
+      <li class="list-group-item">
+        <strong>Number of People:</strong> <%= tip_calculation.num_people %>
+      </li>
+      <li class="list-group-item">
+        <strong>Per Person Amount:</strong> <%= tip_calculation.per_person_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Timestamp:</strong> <%= tip_calculation.timestamp %>
+      </li>
+    </ul>
+  </div>
 </div>

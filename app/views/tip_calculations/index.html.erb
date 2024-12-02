@@ -1,16 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Tip calculations" %>
-
-<h1>Tip calculations</h1>
-
-<div id="tip_calculations">
-  <% @tip_calculations.each do |tip_calculation| %>
-    <%= render tip_calculation %>
-    <p>
-      <%= link_to "Show this tip calculation", tip_calculation %>
-    </p>
+<div class="container mt-4">
+  <% if notice.present? %>
+    <div class="alert alert-success"><%= notice %></div>
   <% end %>
-</div>
 
-<%= link_to "New tip calculation", new_tip_calculation_path %>
+  <% content_for :title, "Tip Calculations" %>
+
+  <h1 class="mb-4">Tip Calculations</h1>
+
+  <div id="tip_calculations" class="row">
+    <% @tip_calculations.each do |tip_calculation| %>
+      <div class="col-md-4 mb-4">
+        <%= render tip_calculation %>
+        <p>
+          <%= link_to "View", tip_calculation, class: "btn btn-secondary" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New Tip Calculation", new_tip_calculation_path, class: "btn btn-primary" %>
+</div>

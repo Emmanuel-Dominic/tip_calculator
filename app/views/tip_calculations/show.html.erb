@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
+  <% if notice.present? %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
 
-<%= render @tip_calculation %>
+  <%= render @tip_calculation %>
 
-<div>
-  <%= link_to "Edit this tip calculation", edit_tip_calculation_path(@tip_calculation) %> |
-  <%= link_to "Back to tip calculations", tip_calculations_path %>
+  <div class="mt-4">
+    <%= link_to "Edit", edit_tip_calculation_path(@tip_calculation), class: "btn btn-secondary" %>
+    <%= link_to "Back", tip_calculations_path, class: "btn btn-primary" %>
 
-  <%= button_to "Destroy this tip calculation", @tip_calculation, method: :delete %>
+    <%= button_to "Delete", @tip_calculation, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+  </div>
 </div>

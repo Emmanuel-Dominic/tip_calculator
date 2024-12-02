@@ -1,11 +1,11 @@
-<% content_for :title, "New tip calculation" %>
+<div class="container mt-4">
+  <% content_for :title, "New Tip Calculation" %>
 
-<h1>New tip calculation</h1>
+  <h1 class="mb-4">New Tip Calculation</h1>
 
-<%= render "form", tip_calculation: @tip_calculation %>
+  <%= render "form", tip_calculation: @tip_calculation %>
 
-<br>
-
-<div>
-  <%= link_to "Back to tip calculations", tip_calculations_path %>
+  <div class="mt-4">
+    <%= link_to "Back to Tip Calculations", tip_calculations_path, class: "btn btn-secondary" %>
+  </div>
 </div>
