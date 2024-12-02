@@ -1,0 +1,11 @@
+<% content_for :title, "New tip calculation" %>
+
+<h1>New tip calculation</h1>
+
+<%= render "form", tip_calculation: @tip_calculation %>
+
+<br>
+
+<div>
+  <%= link_to "Back to tip calculations", tip_calculations_path %>
+</div>

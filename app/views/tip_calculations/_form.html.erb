@@ -1,0 +1,52 @@
+<%= form_with(model: tip_calculation) do |form| %>
+  <% if tip_calculation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tip_calculation.errors.count, "error") %> prohibited this tip_calculation from being saved:</h2>
+
+      <ul>
+        <% tip_calculation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :bill_amount, style: "display: block" %>
+    <%= form.text_field :bill_amount %>
+  </div>
+
+  <div>
+    <%= form.label :tip_percentage, style: "display: block" %>
+    <%= form.text_field :tip_percentage %>
+  </div>
+
+  <div>
+    <%= form.label :tip_amount, style: "display: block" %>
+    <%= form.text_field :tip_amount %>
+  </div>
+
+  <div>
+    <%= form.label :total_bill, style: "display: block" %>
+    <%= form.text_field :total_bill %>
+  </div>
+
+  <div>
+    <%= form.label :num_people, style: "display: block" %>
+    <%= form.number_field :num_people %>
+  </div>
+
+  <div>
+    <%= form.label :per_person_amount, style: "display: block" %>
+    <%= form.text_field :per_person_amount %>
+  </div>
+
+  <div>
+    <%= form.label :timestamp, style: "display: block" %>
+    <%= form.datetime_field :timestamp %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

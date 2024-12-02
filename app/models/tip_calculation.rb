@@ -1,0 +1,2 @@
+class TipCalculation < ApplicationRecord
+end

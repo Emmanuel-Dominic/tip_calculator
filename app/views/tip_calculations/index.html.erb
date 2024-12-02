@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tip calculations" %>
+
+<h1>Tip calculations</h1>
+
+<div id="tip_calculations">
+  <% @tip_calculations.each do |tip_calculation| %>
+    <%= render tip_calculation %>
+    <p>
+      <%= link_to "Show this tip calculation", tip_calculation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tip calculation", new_tip_calculation_path %>

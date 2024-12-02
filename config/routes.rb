@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tip_calculations
   root "application#index"
   match '*unmatched', to: 'application#route_not_found', via: :all
 

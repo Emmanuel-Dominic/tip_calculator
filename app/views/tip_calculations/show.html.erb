@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tip_calculation %>
+
+<div>
+  <%= link_to "Edit this tip calculation", edit_tip_calculation_path(@tip_calculation) %> |
+  <%= link_to "Back to tip calculations", tip_calculations_path %>
+
+  <%= button_to "Destroy this tip calculation", @tip_calculation, method: :delete %>
+</div>
