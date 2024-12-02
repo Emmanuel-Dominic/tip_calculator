@@ -13,17 +13,17 @@
 
     <div class="mb-3">
       <%= form.label :bill_amount, class: "form-label" %>
-      <%= form.number_field :bill_amount, class: "form-control" %>
+      <%= form.number_field :bill_amount, class: "form-control", required: true, min: 0 %>
     </div>
 
     <div class="mb-3">
       <%= form.label :tip_percentage, class: "form-label" %>
-      <%= form.number_field :tip_percentage, class: "form-control" %>
+      <%= form.number_field :tip_percentage, class: "form-control", min: 0, max: 100 %>
     </div>
 
     <div class="mb-3">
       <%= form.label :num_people, class: "form-label" %>
-      <%= form.number_field :num_people, class: "form-control" %>
+      <%= form.number_field :num_people, class: "form-control", required: true, min: 1 %>
     </div>
 
     <div class="d-flex justify-content-end">
