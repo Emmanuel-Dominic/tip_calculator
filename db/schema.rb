@@ -10,5 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_02_224602) do
+  create_table "tip_calculations", force: :cascade do |t|
+    t.decimal "bill_amount"
+    t.decimal "tip_percentage"
+    t.decimal "tip_amount"
+    t.decimal "total_bill"
+    t.integer "num_people"
+    t.decimal "per_person_amount"
+    t.datetime "timestamp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
