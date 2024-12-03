@@ -1,1 +1,26 @@
-<h2>Form<h2>
+<div class="card">
+  <div class="card-body">
+    <% if flash[:error] || alert %>
+      <div class="alert alert-danger"><%= [flash[:error], alert].compact.join('<br>') %></div>
+    <% end %>
+
+    <%= form_with(model: @tip_calculation, url: @tip_calculation.new_record? ? calculator_create_path : calculator_update_path(@tip_calculation), method: @tip_calculation.new_record? ? :post : :patch, local: true) do |form| %>
+      <div class="mb-3">
+        <%= form.label :bill_amount, "Bill Amount ($)", class: "form-label" %>
+        <%= form.number_field :bill_amount, step: 0.01, min: 0, required: true, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :tip_percentage, "Tip Percentage (%)" , class: "form-label"%>
+        <%= form.number_field :tip_percentage, step: 1, min: 0, max: 100, required: true, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :num_people, "Number of People", class: "form-label" %>
+        <%= form.number_field :num_people, min: 1, required: true, class: "form-control" %>
+      </div>
+
+      <%= form.submit @tip_calculation.new_record? ? "Calculate Tip" : "Update Record", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

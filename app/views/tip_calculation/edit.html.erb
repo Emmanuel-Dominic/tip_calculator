@@ -1,40 +1,5 @@
-<div class="container mt-4">
-    <h1 class="mb-4">Edit Tip Record</h1>
-    <% if @tip_calculation %>
-        <%= form_with(model: @tip_calculation, url: calculator_update_path(@tip_calculation), method: :patch, local: true) do |form| %>
-            <% if @tip_calculation.errors.any? %>
-                <div class="alert alert-danger">
-                    <h4><%= pluralize(@tip_calculation.errors.count, "error") %> prohibited this record from being saved:</h4>
-                    <ul>
-                    <% @tip_calculation.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                    </ul>
-                </div>
-            <% end %>
-            <%= form.hidden_field :id, value: @tip_calculation.id %>
-
-            <div class="mb-3">
-                <%= form.label :bill_amount, "Bill Amount", class: "form-label" %>
-                <%= form.number_field :bill_amount, step: 0.01, class: "form-control", required: true, min: 0 %>
-            </div>
-
-            <div class="mb-3">
-                <%= form.label :tip_percentage, "Tip Percentage", class: "form-label" %>
-                <%= form.number_field :tip_percentage, step: 1, class: "form-control", required: true, min: 0, max: 100 %>
-            </div>
-
-            <div class="mb-3">
-                <%= form.label :num_people, "Number of People", class: "form-label" %>
-                <%= form.number_field :num_people, step: 1, class: "form-control", required: true, min: 1 %>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <%= form.submit "Update Record", class: 'btn btn-success' %>
-                <%= link_to 'Back to HomePage', root_path, class: 'btn btn-secondary' %>
-            </div>
-        <% end %>
-    <% else %>
-        <p>Record not found</p>
-    <% end %>
+<h1 class="mb-4">Edit Tip Record</h1>
+<div class="mb-2">
+  <%= link_to 'Back to HomePage', root_path, class: 'btn btn-secondary' %>
 </div>
+<%= render partial: 'form' %>
