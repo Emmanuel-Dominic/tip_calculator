@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   def index
+    @tip_calculations = TipCalculation.all
   end
 
   def route_not_found
