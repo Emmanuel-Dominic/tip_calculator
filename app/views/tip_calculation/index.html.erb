@@ -27,7 +27,8 @@
           <td><%= calculation.num_people %></td>
           <td>$<%= calculation.per_person_amount %></td>
           <td><%= calculation.timestamp.strftime('%d-%m-%Y %H:%M') %></td>
-          <td>
+          <td class="d-flex">
+            <%= link_to 'View', calculator_show_path(calculation), class: 'btn btn-success' %>
             <%= link_to 'Edit', calculator_edit_path(calculation), class: 'btn btn-primary' %>
             <%= form_with url: calculator_destroy_path(calculation), method: :delete, data: { confirm: 'Are you sure?' }, local: true do %>
               <%= submit_tag 'Delete', class: 'btn btn-danger' %>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "application#index"
 
   get "/calculator", to: "tip_calculation#new", as: :calculator_new
-  get "/calculations", to: "tip_calculation#index", as: :calculator_index
+  get "/dashboard", to: "tip_calculation#index", as: :calculator_index
   post "/calculations", to: "tip_calculation#create", as: :calculator_create
   get "/calculations/:id", to: "tip_calculation#show", as: :calculator_show
   get "/calculations/:id/edit", to: "tip_calculation#edit", as: :calculator_edit
