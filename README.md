@@ -2,6 +2,8 @@
 # Tip Calculator
 
 - The Tip Calculator is a Ruby on Rails application that allows users to calculate tips, split bills among people, and manage tip calculation records. It also features an admin dashboard for managing calculations.
+- [Project Link
+  ](https://tip-calculator-yqvq.onrender.com/)
 
 ## Setup Instructions
 
