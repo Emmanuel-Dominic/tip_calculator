@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get "/calculations", to: "tip_calculation#index", as: :calculator_index
   post "/calculations", to: "tip_calculation#create", as: :calculator_create
   get "/calculations/:id", to: "tip_calculation#show", as: :calculator_show
-  put "/calculations/:id", to: "tip_calculation#update", as: :calculator_update
-  delete "/calculations/:id", to: "tip_calculation#delete", as: :calculator_delete
-
+  get "/calculations/:id/edit", to: "tip_calculation#edit", as: :calculator_edit
+  patch "/calculations/:id", to: "tip_calculation#update", as: :calculator_update
+  delete "/calculations/:id", to: "tip_calculation#destroy", as: :calculator_destroy
+  
   match '*unmatched', to: 'application#route_not_found', via: :all
 
   get "up" => "rails/health#show", as: :rails_health_check

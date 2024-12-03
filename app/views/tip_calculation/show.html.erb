@@ -1,1 +1,30 @@
-<h1>Show<h1>
+<div class="card">
+  <div class="card-header">
+    <h2>Tip Calculation Result</h2>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Bill Amount:</strong> $<%= @tip_calculation.bill_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Tip Percentage:</strong> <%= @tip_calculation.tip_percentage %>%
+      </li>
+      <li class="list-group-item">
+        <strong>Tip Amount:</strong> $<%= @tip_calculation.tip_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Total Bill:</strong> $<%= @tip_calculation.total_bill %>
+      </li>
+      <li class="list-group-item">
+        <strong>Per Person Amount:</strong> $<%= @tip_calculation.per_person_amount %>
+      </li>
+      <li class="list-group-item">
+        <strong>Number of People:</strong> <%= @tip_calculation.num_people %>
+      </li>
+    </ul>
+  </div>
+  <div class="card-footer text-center">
+    <%= link_to "Back to Calculator", calculator_new_path, class: "btn btn-primary" %>
+  </div>
+</div>
