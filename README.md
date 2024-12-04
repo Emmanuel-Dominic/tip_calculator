@@ -84,7 +84,7 @@ Access the application at `http://127.0.0.1:3000`.
 
 ## Implementation Summary
 
-* The development branch utilized the scaffold format for implementation. Various commands were executed on the main branch to generate models and controllers. This process provided invaluable insight into creating custom routes, models and controllers, particularly for update and delete resources.
+* The develop branch utilized the scaffold format for implementation. Various commands were executed on the main branch to generate models and controllers. This process provided invaluable insight into creating custom routes, models and controllers, particularly for update and delete resources.
 
 ## Approach to Solving the Challenge
 
